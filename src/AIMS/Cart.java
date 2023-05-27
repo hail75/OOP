@@ -37,7 +37,7 @@ public class Cart {
         return totalCost;
     }
 
-    public void addDigitalVideoDisc(DigitalVideoDisc... dvdList) {
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
         for (DigitalVideoDisc dvd : dvdList) {
             addDigitalVideoDisc(dvd);
         }
