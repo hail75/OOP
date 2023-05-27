@@ -25,7 +25,6 @@ public class TestPassingParameter {
         discs[1] = tmp;
     }
     
-
     public static void changeTitle(DigitalVideoDisc dvd, String title) {
         String oldTitle = dvd.getTitle();
         dvd.setTitle(title);
