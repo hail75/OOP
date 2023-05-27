@@ -48,5 +48,3 @@ public class Cart {
         addDigitalVideoDisc(dvd2);
     }
 }
-
-
