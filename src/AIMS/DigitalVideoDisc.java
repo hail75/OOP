@@ -35,5 +35,21 @@ public class DigitalVideoDisc {
     }
     public float getCost() {
         return cost;
-    } 
+    }
+    public int getId() {
+        return id;
+    }
+
+    public String toString() {
+        return "DVD - " +
+                title + " - " +
+                category + " - " +
+                director + " - " +
+                length + ": " +
+                cost + " $";
+    }
+
+    public boolean isMatch(String title) {
+        return this.title.equalsIgnoreCase(title);
+    }
 }
