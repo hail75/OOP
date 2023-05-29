@@ -1,4 +1,4 @@
-package AIMS;
+
 
 public class DigitalVideoDisc {
     private String title;
@@ -15,7 +15,7 @@ public class DigitalVideoDisc {
         this.director = director;
         this.length = length;
         this.cost = cost;
-        this.id = ++ nbDigitalVideoDiscs;
+        this.id = ++nbDigitalVideoDiscs;
     }
 
     public String getTitle() {

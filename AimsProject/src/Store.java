@@ -1,4 +1,4 @@
-package AIMS;
+
 
 public class Store {
     private DigitalVideoDisc[] itemsInStore;
