@@ -1,4 +1,6 @@
+package hust.soict.dsai.aims.score;
 
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
 public class Store {
     private DigitalVideoDisc[] itemsInStore;
@@ -34,7 +36,7 @@ public class Store {
         System.out.println(dvd.getTitle() + " is not in the store.");
     }
 
-    public void printItemsInStore() {
+    public void print() {
         System.out.println("Items in the Store:");
         for (int i = 0; i < count; i++) {
             System.out.println((i + 1) + ". " + itemsInStore[i].toString());
