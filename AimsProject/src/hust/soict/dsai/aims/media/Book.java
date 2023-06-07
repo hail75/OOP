@@ -1,16 +1,17 @@
 package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Book extends Media {
-    private ArrayList<String> authors = new ArrayList<>();  
+    private List<String> authors = new ArrayList<>();  
     
     public Book(int id, String title, String category, float cost, ArrayList<String> authors) {
         super(id, title, category, cost);
         this.authors = authors;
     }
 
-    public ArrayList<String> getAuthors() {
+    public List<String> getAuthors() {
         return authors;
     }
 
@@ -31,4 +32,12 @@ public class Book extends Media {
             System.out.println(author + " is not in the list of authors.");
         }
     }    
+
+    @Override
+    public String toString() {
+        return "Book - " +
+                getTitle() + " - " +
+                getCategory() + " - " +
+                getCost() + " $";
+    }
 }

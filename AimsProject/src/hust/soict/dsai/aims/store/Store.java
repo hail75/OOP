@@ -1,10 +1,12 @@
 package hust.soict.dsai.aims.store;
 
-import hust.soict.dsai.aims.media.Media;
 import java.util.ArrayList;
+import java.util.List;
+
+import hust.soict.dsai.aims.media.Media;
 
 public class Store {
-    private ArrayList<Media> itemsInStore = new ArrayList<>();
+    private List<Media> itemsInStore = new ArrayList<>();
 
     public void addMedia(Media media) {
         itemsInStore.add(media);
@@ -17,5 +19,18 @@ public class Store {
         } else {
             System.out.println(media.getTitle() + " is not in the store.");
         }
+    }
+
+    public Media search(String title) {
+        for (Media media : itemsInStore) {
+            if (media.getTitle().equals(title)) {
+                return media;
+            }
+        }
+        return null;
+    }
+
+    public List<Media> getItemsInStore() {
+        return itemsInStore;
     }
 }

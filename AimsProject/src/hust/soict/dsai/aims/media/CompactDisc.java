@@ -1,10 +1,11 @@
 package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CompactDisc extends Disc implements Playable {
     private String artist;
-    private ArrayList<Track> tracks = new ArrayList<>();
+    private List<Track> tracks = new ArrayList<>();
 
     public CompactDisc(int id, String title, String category, float cost, int length, String director, String artist,
             ArrayList<Track> tracks) {
@@ -16,7 +17,7 @@ public class CompactDisc extends Disc implements Playable {
     public String getArtist() {
         return artist;
     }
-    public ArrayList<Track> getTracks() {
+    public List<Track> getTracks() {
         return tracks;
     }
 
@@ -48,12 +49,29 @@ public class CompactDisc extends Disc implements Playable {
 
     @Override
     public void play() {
-        System.out.println("Playing CD: " + this.getTitle());
-        System.out.println("Artist: " + this.getArtist());
-        System.out.println("Number of tracks: " + this.getTracks().size());
+        System.out.println("Playing CD: " + getTitle());
+        System.out.println("Artist: " + getArtist());
+        System.out.println("Number of tracks: " + getTracks().size());
         
-        for (Track track : this.getTracks()) {
+        for (Track track : getTracks()) {
             track.play();
         }
+    }
+
+    @Override
+    public String toString() {
+        String tracksInfo = "";
+        for (Track track : getTracks()) {
+            tracksInfo += track.toString() + "\n";
+        }
+
+        return "CD - " +
+                getTitle() + " - " +
+                getCategory() + " - " +
+                getDirector() + " - " +
+                getLength() + " minutes - " +
+                getCost() + " $" +
+                "\nTracks:\n" +
+                tracksInfo;
     }
 }
