@@ -3,7 +3,7 @@ package hust.soict.dsai.aims.media;
 import java.util.ArrayList;
 
 public class Book extends Media {
-    private ArrayList<String> authors;  
+    private ArrayList<String> authors = new ArrayList<>();  
     
     public Book(int id, String title, String category, float cost, ArrayList<String> authors) {
         super(id, title, category, cost);
