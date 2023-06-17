@@ -2,6 +2,7 @@ package hust.soict.dsai.aims.store;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import hust.soict.dsai.aims.media.Media;
 
@@ -13,11 +14,11 @@ public class Store {
         System.out.println("Added " + media.getTitle() + " to the store.");
     }
 
-    public void removeMedia(Media media) {
+    public void removeMedia(Media media) throws NoSuchElementException {
         if (itemsInStore.remove(media)) {
             System.out.println("Removed " + media.getTitle() + " from the store.");
         } else {
-            System.out.println(media.getTitle() + " is not in the store.");
+            throw new NoSuchElementException(media.getTitle() + " is not in the store.");
         }
     }
 

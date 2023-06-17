@@ -1,27 +1,31 @@
 package hust.soict.dsai.aims.cart;
 
+import java.util.NoSuchElementException;
+
+import javax.naming.LimitExceededException;
+
 import hust.soict.dsai.aims.media.Media;
-import java.util.ArrayList;
-import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
     public static final int MAX_NUMBER_ORDERED = 20;
-    private List<Media> itemsOrdered = new ArrayList<>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
     
-    public void addMedia(Media media) {
+    public void addMedia(Media media) throws LimitExceededException {
         if (itemsOrdered.size() < MAX_NUMBER_ORDERED) {
             itemsOrdered.add(media);
             System.out.println("Added " + media.getTitle() + " to the cart.");
         } else {
-            System.out.println("The cart is full!");
+            throw new LimitExceededException("The cart is full!");
         }
     }
     
-    public void removeMedia(Media media) {
+    public void removeMedia(Media media) throws NoSuchElementException {
         if (itemsOrdered.remove(media)) {
             System.out.println("Removed " + media.getTitle() + " from the cart.");
         } else {
-            System.out.println(media.getTitle() + " is not in the cart.");
+            throw new NoSuchElementException(media.getTitle() + " is not in the cart.");
         }
     }
     
@@ -37,7 +41,7 @@ public class Cart {
         return itemsOrdered.size();
     }
 
-    public List<Media> getItemsOrdered() {
+    public ObservableList<Media> getItemsOrdered() {
         return itemsOrdered;
     }
 

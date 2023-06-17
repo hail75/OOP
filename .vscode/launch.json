@@ -1,0 +1,129 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "StoreScreen",
+            "request": "launch",
+            "mainClass": "hust.soict.dsai.aims.screen.StoreScreen",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "CartScreen",
+            "request": "launch",
+            "mainClass": "hust.soict.dsai.aims.screen.CartScreen",
+            "projectName": "OOP_ed52f6cb",
+            "vmArgs": "--module-path \"C:\\Program Files\\Java\\javafx-sdk-20.0.1\\lib\" --add-modules javafx.controls,javafx.fxml,javafx.swing"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": "--module-path \"C:\\Program Files\\Java\\javafx-sdk-20.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ConcatenationInLoops",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.garbage.ConcatenationInLoops",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "Painter",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.javafx.Painter",
+            "projectName": "OOP_ed52f6cb",
+            "vmArgs": "--module-path \"C:\\Program Files\\Java\\javafx-sdk-20.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ArrayManipulation",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.lab01.ArrayManipulation",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "ChoosingOption",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.lab01.ChoosingOption",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "InputFromKeyboard",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.lab01.InputFromKeyboard",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "MatricesAddition",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.lab01.MatricesAddition",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "NumberOfDays",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.lab01.NumberOfDays",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "Stars",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.lab01.Stars",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "AWTAccumulator",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.swing.AWTAccumulator",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "NumberGrid",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.swing.NumberGrid",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "SwingAccumulator",
+            "request": "launch",
+            "mainClass": "OtherProjects.hust.soict.dsai.swing.SwingAccumulator",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "Aims",
+            "request": "launch",
+            "mainClass": "hust.soict.dsai.aims.Aims",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "MediaSortingTest",
+            "request": "launch",
+            "mainClass": "hust.soict.dsai.aims.media.MediaSortingTest",
+            "projectName": "OOP_ed52f6cb"
+        },
+        {
+            "type": "java",
+            "name": "ToStringTest",
+            "request": "launch",
+            "mainClass": "hust.soict.dsai.aims.media.ToStringTest",
+            "projectName": "OOP_ed52f6cb"
+        }
+    ]
+}

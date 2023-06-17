@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Aims",
+            "request": "launch",
+            "mainClass": "hust.soict.dsai.aims.Aims",
+            "projectName": "AimsProject_12599207"
+        },
+        {
+            "type": "java",
+            "name": "MediaSortingTest",
+            "request": "launch",
+            "mainClass": "hust.soict.dsai.aims.media.MediaSortingTest",
+            "projectName": "AimsProject_12599207"
+        },
+        {
+            "type": "java",
+            "name": "ToStringTest",
+            "request": "launch",
+            "mainClass": "hust.soict.dsai.aims.media.ToStringTest",
+            "projectName": "AimsProject_12599207"
+        },
+        {
+            "type": "java",
+            "name": "CartScreen",
+            "request": "launch",
+            "mainClass": "hust.soict.dsai.aims.screen.CartScreen",
+            "projectName": "AimsProject_12599207"
+        }
+    ]
+}

@@ -3,7 +3,11 @@ package hust.soict.dsai.aims;
 import java.util.Collections;
 import java.util.Scanner;
 
+import javax.naming.LimitExceededException;
+import javax.swing.JOptionPane;
+
 import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.CompactDisc;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
@@ -16,10 +20,16 @@ public class Aims {
     private static Cart cart = new Cart();
 
     public static void main(String[] args) {
-        showMenu();
+        try {
+            showMenu();
+        } catch (PlayerException e) {
+            JOptionPane.showMessageDialog(null, "PlayerException: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (LimitExceededException e) {
+            JOptionPane.showMessageDialog(null, "LimitExceededException: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
-    public static void showMenu() {
+    public static void showMenu() throws LimitExceededException,PlayerException {
         System.out.println("AIMS:");
         System.out.println("--------------------------------");
         System.out.println("1. View store");
@@ -55,7 +65,7 @@ public class Aims {
         }
     }
 
-    public static void viewStore(Scanner scanner) {
+    public static void viewStore(Scanner scanner) throws LimitExceededException, PlayerException {
         store.getItemsInStore();
         System.out.println("Options:");
         System.out.println("--------------------------------");
@@ -93,7 +103,7 @@ public class Aims {
         }
     }
 
-    public static void seeMediaDetails(Scanner scanner) {
+    public static void seeMediaDetails(Scanner scanner) throws LimitExceededException,PlayerException {
         System.out.println("Enter the title of the media:");
         String title = scanner.nextLine();
 
@@ -106,7 +116,7 @@ public class Aims {
         }
     }
 
-    public static void mediaDetailsMenu(Scanner scanner, Media media) {
+    public static void mediaDetailsMenu(Scanner scanner, Media media) throws LimitExceededException, PlayerException {
         System.out.println("Options:");
         System.out.println("--------------------------------");
         System.out.println("1. Add to cart");
@@ -142,7 +152,7 @@ public class Aims {
         }
     }
 
-    public static void addMediaToCart(Scanner scanner) {
+    public static void addMediaToCart(Scanner scanner) throws LimitExceededException, PlayerException {
         System.out.println("Enter the title of the media:");
         String title = scanner.nextLine();
 
@@ -155,7 +165,7 @@ public class Aims {
         }
     }
 
-    public static void playMedia(Scanner scanner) {
+    public static void playMedia(Scanner scanner) throws PlayerException {
         System.out.println("Enter the title of the media:");
         String title = scanner.nextLine();
 
@@ -171,12 +181,12 @@ public class Aims {
         }
     }
 
-    public static void seeCurrentCart(Scanner scanner) {
+    public static void seeCurrentCart(Scanner scanner) throws LimitExceededException, PlayerException {
         cart.printCart();
         cartMenu(scanner);
     }
 
-    public static void cartMenu(Scanner scanner) {
+    public static void cartMenu(Scanner scanner) throws LimitExceededException, PlayerException {
         System.out.println("Options:");
         System.out.println("--------------------------------");
         System.out.println("1. Filter medias in cart");
@@ -217,7 +227,7 @@ public class Aims {
         }
     }
 
-    public static void filterMediasInCart(Scanner scanner) {
+    public static void filterMediasInCart(Scanner scanner) throws LimitExceededException, PlayerException {
         System.out.println("Options:");
         System.out.println("--------------------------------");
         System.out.println("1. Filter by ID");
@@ -251,7 +261,7 @@ public class Aims {
         }
     }
 
-    public static void sortMediasInCart(Scanner scanner) {
+    public static void sortMediasInCart(Scanner scanner) throws LimitExceededException, PlayerException {
         System.out.println("Options:");
         System.out.println("--------------------------------");
         System.out.println("1. Sort by Title");
@@ -301,7 +311,7 @@ public class Aims {
     }
     
 
-    public static void playMediaFromCart(Scanner scanner) {
+    public static void playMediaFromCart(Scanner scanner) throws LimitExceededException, PlayerException {
         System.out.println("Enter the title of the media to play:");
         String title = scanner.nextLine();
 
@@ -318,7 +328,7 @@ public class Aims {
         cartMenu(scanner);
     }
 
-    public static void placeOrder(Scanner scanner) {
+    public static void placeOrder(Scanner scanner) throws LimitExceededException, PlayerException {
         if (cart.getNumberOfItems() == 0) {
             System.out.println("Cart is empty. Cannot place an order!");
         } else {

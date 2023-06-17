@@ -44,12 +44,21 @@ public abstract class Media {
         if (this == obj) {
             return true;
         }
-        if (obj == null || this.getClass() != obj.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Media otherMedia = (Media) obj;
-        return this.title.equals(otherMedia.title);
-    }
+        Media otherMedia;
+        try {
+            otherMedia = (Media) obj;
+        } catch (ClassCastException e) {
+            return false;
+        }
+        try {
+            return title.equals(otherMedia.title);
+        } catch (NullPointerException e) {
+            return false;
+        }
+}
 
     public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
     public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();

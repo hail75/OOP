@@ -1,14 +1,18 @@
 package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
+
+import hust.soict.dsai.aims.exception.PlayerException;
 
 public class CompactDisc extends Disc implements Playable {
     private String artist;
     private List<Track> tracks = new ArrayList<>();
 
     public CompactDisc(int id, String title, String category, float cost, int length, String director, String artist,
-            ArrayList<Track> tracks) {
+            List<Track> tracks) {
         super(id, title, category, cost, length, director);
         this.artist = artist;
         this.tracks = tracks;
@@ -21,21 +25,21 @@ public class CompactDisc extends Disc implements Playable {
         return tracks;
     }
 
-    public void addtrack(Track track) {
+    public void addtrack(Track track) throws IllegalArgumentException {
         if (!tracks.contains(track)) {
             tracks.add(track);
             System.out.println("Added track: " + track.getTitle());
         } else {
-            System.out.println(track + " is already in the list of tracks.");
+            throw new IllegalArgumentException(track.getTitle() + " is already in the list of tracks.");
         }
     }
 
-    public void removetrack(Track track) {
+    public void removetrack(Track track) throws NoSuchElementException {
         if (tracks.contains(track)) {
             tracks.remove(track);
             System.out.println("Removed track: " + track.getTitle());
         } else {
-            System.out.println(track + " is not in the list of tracks.");
+            throw new NoSuchElementException(track.getTitle() + " is not in the list of tracks.");
         }
     }
 
@@ -48,13 +52,20 @@ public class CompactDisc extends Disc implements Playable {
     }
 
     @Override
-    public void play() {
-        System.out.println("Playing CD: " + getTitle());
-        System.out.println("Artist: " + getArtist());
-        System.out.println("Number of tracks: " + getTracks().size());
-        
-        for (Track track : getTracks()) {
-            track.play();
+    public void play() throws PlayerException {
+        if (getLength() > 0) {
+            Iterator<Track> iter = tracks.iterator();
+            Track nextTrack;
+            while (iter.hasNext()) {
+                nextTrack = (Track) iter.next();
+                try {
+                    nextTrack.play();
+                } catch (PlayerException e) {
+                    throw new PlayerException("Error playing track: " + nextTrack.getTitle(), e);
+                }
+            }
+        } else {
+            throw new PlayerException("CD length is non-positive");
         }
     }
 
